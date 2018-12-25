@@ -34,10 +34,34 @@
         </property>
     </bean>
 
-    <mvc:resources mapping="/assets/**" location="classpath:static/"/>
+    <mvc:resources mapping="/assets/**" location="classpath:static/assets/"/>
 
     <bean id="velocityConfig" class="com.github.ltsopensource.admin.velocity.view.VelocityConfigurer">
-        <property name="configLocation" value="classpath:velocity.properties"/>
+        <property name="velocityProperties">
+            <props>
+                <prop key="resource.loader">webapp</prop>
+                <prop key="webapp.resource.loader.class">org.apache.velocity.tools.view.WebappResourceLoader</prop>
+                <prop key="webapp.resource.loader.path">/WEB-INF/views/</prop>
+                <prop key="webapp.resource.loader.cache">true</prop>
+                <prop key="webapp.resource.loader.modificationCheckInterval">300</prop>
+                <prop key="webapp.resource.loader.cache">false</prop>
+                <prop key="input.encoding">UTF-8</prop>
+                <prop key="output.encoding">UTF-8</prop>
+            </props>
+
+            <!--<props>-->
+                <!--&lt;!&ndash;<prop key="resource.loader">class</prop>&ndash;&gt;-->
+                <!--<prop key="class.resource.loader.class">-->
+                    <!--org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader-->
+                <!--</prop>-->
+                <!--<prop key="class.resource.loader.path">classpath:static/views/</prop>-->
+                <!--<prop key="class.resource.loader.cache">true</prop>-->
+                <!--<prop key="class.resource.loader.modificationCheckInterval">300</prop>-->
+                <!--<prop key="class.resource.loader.cache">false</prop>-->
+                <!--<prop key="input.encoding">UTF-8</prop>-->
+                <!--<prop key="output.encoding">UTF-8</prop>-->
+            <!--</props>-->
+        </property>
     </bean>
     <bean id="viewResolver"
           class="com.github.ltsopensource.admin.velocity.view.VelocityLayoutViewResolver">
@@ -47,8 +71,7 @@
         <property name="suffix" value=".vm"/>
         <property name="exposeSpringMacroHelpers" value="true"/>
         <property name="contentType" value="text/html;charset=UTF-8"/>
-        <property name="viewClass"
-                  value="com.github.ltsopensource.admin.velocity.view.VelocityLayoutView"/>
+        <property name="viewClass" value="com.github.ltsopensource.admin.velocity.view.VelocityLayoutView"/>
     </bean>
 
     <bean class="com.github.ltsopensource.admin.web.support.ExceptionHandlerResolver"/>
