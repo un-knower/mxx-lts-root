@@ -63,7 +63,7 @@
             var taskTrackerNodeGroup = $("select[name='taskTrackerNodeGroup']").val();
 
             $.ajax({
-                url: 'api/job-queue/load-add.do',
+                url: 'job-queue/load-add.do',
                 type: 'POST',
                 dataType: 'json',
                 data: {"taskTrackerNodeGroup": taskTrackerNodeGroup},

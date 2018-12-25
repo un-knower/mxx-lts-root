@@ -105,7 +105,7 @@
                     '<span class="label label-primary" style="background-color: #DD6B55;"><i class="fa fa-trash-o"></i> 删除</span></a>';
         }
         var ltsTable = $("#ltstableContainer").ltsTable({
-            url: 'api/node/node-group-get',
+            url: 'node/node-group-get',
             templateId: 'ltstable'
         });
 
@@ -135,7 +135,7 @@
             }, function (isConfirm) {
                 if(isConfirm){
                     $.ajax({
-                        url: 'api/node/node-group-del',
+                        url: 'node/node-group-del',
                         type: 'POST',
                         dataType: 'json',
                         data: {nodeGroup: nodeGroup, nodeType: nodeType},
@@ -164,7 +164,7 @@
                 return;
             }
             $.ajax({
-                url: 'api/node/node-group-add',
+                url: 'node/node-group-add',
                 type: 'POST',
                 dataType: 'json',
                 data: {nodeGroup: nodeGroup, nodeType: nodeType},

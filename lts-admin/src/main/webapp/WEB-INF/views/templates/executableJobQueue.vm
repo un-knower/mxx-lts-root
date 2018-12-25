@@ -266,7 +266,7 @@
 
             var params = {jobId: jobId, taskTrackerNodeGroup: taskTrackerNodeGroup};
             $.ajax({
-                url: 'api/job-queue/executing-job-trigger',
+                url: 'job-queue/executing-job-trigger',
                 type: 'POST',
                 dataType: 'json',
                 data: params,
@@ -299,7 +299,7 @@
             }, function (isConfirm) {
                 if (isConfirm) {
                     $.ajax({
-                        url: 'api/job-queue/executable-job-delete',
+                        url: 'job-queue/executable-job-delete',
                         type: 'POST',
                         dataType: 'json',
                         data: {
@@ -406,7 +406,7 @@
             }
             // 请求修改数据
             $.ajax({
-                url: 'api/job-queue/executable-job-update',
+                url: 'job-queue/executable-job-update',
                 type: 'POST',
                 dataType: 'json',
                 data: params,
@@ -434,7 +434,7 @@
         });
 
         var ltsTable = $("#ltstableContainer").ltsTable({
-            url: 'api/job-queue/executable-job-get',
+            url: 'job-queue/executable-job-get',
             templateId: 'ltstable'
         });
 

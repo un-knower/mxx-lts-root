@@ -10,7 +10,7 @@
     function getJVMMData(params, jvmType) {
         params.jvmType = jvmType;
         $.ajax({
-            url: '../api/monitor/jvm-monitor-data-get.do',
+            url: '../monitor/jvm-monitor-data-get.do',
             type: 'GET',
             dataType: 'json',
             data: params,

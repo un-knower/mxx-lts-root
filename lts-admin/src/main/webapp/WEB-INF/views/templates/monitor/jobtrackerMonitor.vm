@@ -126,7 +126,7 @@
             params.nodeType = "JOB_TRACKER";
 
             $.ajax({
-                url: '../api/monitor/monitor-data-get.do',
+                url: '../monitor/monitor-data-get.do',
                 type: 'GET',
                 dataType: 'json',
                 data: params,

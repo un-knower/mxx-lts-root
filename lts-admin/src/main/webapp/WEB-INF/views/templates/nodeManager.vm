@@ -220,7 +220,7 @@
             return '<a href="javascript:void(0);" class="jvm-info-icon" identity="'+ row.identity +'" target="_blank" title="JVM信息"><span class="label label-info"><i class="fa fa-info-circle"></i> JVM</span></a>';
         };
         var ltsTable = $("#ltstableContainer").ltsTable({
-            url: 'api/node/node-list-get',
+            url: 'node/node-list-get',
             templateId: 'ltstable'
         });
 
@@ -238,7 +238,7 @@
         $(document).on("click", "#reSubscribeBtn", function(){
 
             $.ajax({
-                url: 'api/node/registry-re-subscribe.do',
+                url: 'node/registry-re-subscribe.do',
                 type: 'POST',
                 dataType: 'JSON',
                 data: {},
@@ -262,7 +262,7 @@
             console.log(identity);
 
             $.ajax({
-                url: 'api/jvm/node-jvm-info-get.do',
+                url: 'jvm/node-jvm-info-get.do',
                 type: 'GET',
                 dataType: 'JSON',
                 data: {identity: identity},
