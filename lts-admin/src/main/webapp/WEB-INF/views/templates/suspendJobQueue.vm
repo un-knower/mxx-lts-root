@@ -286,7 +286,7 @@
             }, function (isConfirm) {
                 if (isConfirm) {
                     $.ajax({
-                        url: 'job-queue/suspend-job-delete',
+                        url: 'api/job-queue/suspend-job-delete',
                         type: 'POST',
                         dataType: 'json',
                         data: {jobId: jobId, taskTrackerNodeGroup: taskTrackerNodeGroup},
@@ -407,7 +407,7 @@
             }
             // 请求修改数据
             $.ajax({
-                url: 'job-queue/suspend-job-update',
+                url: 'api/job-queue/suspend-job-update',
                 type: 'POST',
                 dataType: 'json',
                 data: params,
@@ -442,7 +442,7 @@
             }, function (isConfirm) {
                 if (isConfirm) {
                     $.ajax({
-                        url: 'job-queue/suspend-job-recovery',
+                        url: 'api/job-queue/suspend-job-recovery',
                         type: 'POST',
                         dataType: 'json',
                         data: {jobId: jobId, taskTrackerNodeGroup: taskTrackerNodeGroup},
@@ -460,7 +460,7 @@
         });
 
         var ltsTable = $("#ltstableContainer").ltsTable({
-            url: 'job-queue/suspend-job-get',
+            url: 'api/job-queue/suspend-job-get',
             templateId: 'ltstable'
         });
 

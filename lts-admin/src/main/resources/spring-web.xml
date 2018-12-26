@@ -34,7 +34,7 @@
         </property>
     </bean>
 
-    <mvc:resources mapping="/assets/**" location="classpath:static/assets/"/>
+    <mvc:resources mapping="/assets/**" location="classpath:/assets/"/>
 
     <bean id="velocityConfig" class="com.github.ltsopensource.admin.velocity.view.VelocityConfigurer">
         <property name="velocityProperties">
@@ -48,19 +48,6 @@
                 <prop key="input.encoding">UTF-8</prop>
                 <prop key="output.encoding">UTF-8</prop>
             </props>
-
-            <!--<props>-->
-                <!--&lt;!&ndash;<prop key="resource.loader">class</prop>&ndash;&gt;-->
-                <!--<prop key="class.resource.loader.class">-->
-                    <!--org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader-->
-                <!--</prop>-->
-                <!--<prop key="class.resource.loader.path">classpath:static/views/</prop>-->
-                <!--<prop key="class.resource.loader.cache">true</prop>-->
-                <!--<prop key="class.resource.loader.modificationCheckInterval">300</prop>-->
-                <!--<prop key="class.resource.loader.cache">false</prop>-->
-                <!--<prop key="input.encoding">UTF-8</prop>-->
-                <!--<prop key="output.encoding">UTF-8</prop>-->
-            <!--</props>-->
         </property>
     </bean>
     <bean id="viewResolver"

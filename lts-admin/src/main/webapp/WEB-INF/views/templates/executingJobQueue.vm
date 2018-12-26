@@ -152,7 +152,7 @@
         }
 
         var ltsTable = $("#ltstableContainer").ltsTable({
-            url: 'job-queue/executing-job-get',
+            url: 'api/job-queue/executing-job-get',
             templateId: 'ltstable'
         });
 
@@ -182,7 +182,7 @@
             }, function (isConfirm) {
                 if(isConfirm){
                     $.ajax({
-                        url: 'job-queue/executing-job-terminate',
+                        url: 'api/job-queue/executing-job-terminate',
                         type: 'POST',
                         dataType: 'json',
                         data: {jobId: jobId},

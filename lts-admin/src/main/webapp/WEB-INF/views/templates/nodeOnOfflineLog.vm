@@ -150,7 +150,7 @@
         }
 
         var ltsTable = $("#ltstableContainer").ltsTable({
-            url: 'node/node-onoffline-log-get',
+            url: 'api/node/node-onoffline-log-get',
             templateId: 'ltstable'
         });
 

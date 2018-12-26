@@ -28,6 +28,7 @@
     </modules>
 
     <properties>
+        <jdk.version>1.8</jdk.version>
         <jedis.version>2.7.3</jedis.version>
         <fastjson.version>1.2.7</fastjson.version>
         <leveldbjni.version>1.8</leveldbjni.version>
@@ -266,6 +267,18 @@
     </dependencyManagement>
     <profiles>
         <profile>
+            <id>jdk</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <jdk>${jdk.version}</jdk>
+            </activation>
+            <properties>
+                <maven.compiler.source>${jdk.version}</maven.compiler.source>
+                <maven.compiler.target>${jdk.version}</maven.compiler.target>
+                <maven.compiler.compilerVersion>${jdk.version}</maven.compiler.compilerVersion>
+            </properties>
+        </profile>
+        <profile>
             <id>dev</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -275,8 +288,8 @@
                     <plugin>
                         <artifactId>maven-compiler-plugin</artifactId>
                         <configuration>
-                            <source>1.6</source>
-                            <target>1.6</target>
+                            <source>${jdk.version}</source>
+                            <target>${jdk.version}</target>
                             <encoding>UTF-8</encoding>
                         </configuration>
                     </plugin>
@@ -305,8 +318,8 @@
                     <plugin>
                         <artifactId>maven-compiler-plugin</artifactId>
                         <configuration>
-                            <source>1.6</source>
-                            <target>1.6</target>
+                            <source>${jdk.version}</source>
+                            <target>${jdk.version}</target>
                             <encoding>UTF-8</encoding>
                         </configuration>
                     </plugin>

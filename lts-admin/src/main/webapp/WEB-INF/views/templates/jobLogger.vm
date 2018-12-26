@@ -216,7 +216,7 @@
         }
 
         var ltsTable = $("#ltstableContainer").ltsTable({
-            url: 'job-logger/job-logger-get',
+            url: 'api/job-logger/job-logger-get',
             templateId: 'ltstable'
         });
 
